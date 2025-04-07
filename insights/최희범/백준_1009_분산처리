@@ -43,12 +43,13 @@ pow_dic = {
 }
 
 def power(a, b):
+    if b == 0:
+        result.append(1)
+        return
     rest_a = a % 10
-    easy_b = (b-1) % len(pow_dic[rest_a])
-    if rest_a in [0,1,5,6]:
-        result.append(pow_dic[rest_a][0])
-    else :
-        result.append(pow_dic[rest_a][easy_b])
+    cycle = pow_dic[rest_a]
+    easy_b = (b-1) % len(cycle)
+    result.append(cycle[easy_b])
 
 for i in range(num):
     a, b = [int(v) for v in input().split()]
