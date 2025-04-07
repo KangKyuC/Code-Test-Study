@@ -1,0 +1,32 @@
+num = int(input())
+
+result = [] # 결과값을 담을 빈 리스트
+
+pow_dic = { # a ** b 의 1자리 수 패턴
+    0 : [0],
+    1 : [1],
+    2 : [2,4,8,6],
+    3 : [3,9,7,1],
+    4 : [4,6],
+    5 : [5],
+    6 : [6],
+    7 : [7,9,3,1],
+    8 : [8,4,2,6],
+    9 : [9,1],
+}
+
+def power(a, b): # 컴퓨터 번호 배정해주는 함수
+    if b == 0: # b가 0일 때 
+        result.append(1) # a의 0승인 1 추가
+        return
+    rest_a = a % 10 # a를 10으로 나눈 나머지
+    cycle = pow_dic[rest_a] # a의 1자리수 패턴
+    easy_b = (b-1) % len(cycle) # b-1을 패턴의 길이로 나눈 나머지
+    result.append(cycle[easy_b]) # 패턴의 easy_b번째 추가
+    
+for i in range(num): # 입력
+    a, b = [int(v) for v in input().split()]
+    power(a, b)
+    
+for i in result:
+    print(10 if i==0 else i)
