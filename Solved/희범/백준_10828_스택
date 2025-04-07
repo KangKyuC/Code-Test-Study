@@ -1,0 +1,47 @@
+stack = []
+result = []
+
+num_input = int(input())
+
+# 문제에서 지시한 함수 작성
+def push(num): # 정수 num을 스택에 넣음
+    stack.append(num)
+
+def pop(): # 스택에서 가장 위에 있는 정수를 빼고, 그 수를 출력
+    if len(stack) == 0:
+        result.append(-1)
+    else:
+        result.append(stack.pop())
+
+def size(): # 스택의 크기를 출력
+    result.append(len(stack))
+
+def empty(): # 스택이 비어있으면 1, 아니면 0을 출력
+    if len(stack) == 0:
+        result.append(1)
+    else:
+        result.append(0)
+
+def top(): # 스택이 비어있으면 -1 출력, 그렇지 않으면 가장 위에 있는 수 출력
+    if len(stack) == 0 :
+        result.append(-1)
+    else :
+        result.append(stack[-1])
+    
+for _ in range(num_input): # name, status 입력하기 위한 for 문
+    user_input = input().split() # 입력값을 리스트로 변환
+    command = user_input[0]
+    if command == "push":
+        num = int(user_input[1])
+        push(num)
+    elif command == "pop":
+        pop()
+    elif command == "size":
+        size()
+    elif command == "empty":
+        empty()
+    elif command == "top":
+        top()
+    
+for i in result:
+    print(i)
