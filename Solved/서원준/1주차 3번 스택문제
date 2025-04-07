@@ -1,0 +1,42 @@
+import sys  //반복적으로 입력을 받기 때문에 sys모듈을 사용 
+
+T = int(input())
+
+lst = []
+
+for _ in range(T):
+    nums = sys.stdin.readline().split()
+
+    if nums[0] == 'push':   // nums의 0번째 값과 1번째 값이 입력 받게 되는데 push라는 정보는 0번째 인덱스에 저장되어 있기때문에 비교
+        lst.append(int(nums[1]))
+    elif nums[0] == 'pop':   // if lst: == if lst != 0: 과 같은 의미로 lst에 비어있지않으면 TRUE를 반환하기에 if lst:가 안비어있으면 pop으로 빼내주고 아니라면 -1 반환 
+        if lst:
+            print(lst.pop())
+        else:
+            print(-1)
+    elif nums[0] == 'top':  //스택 형태이기때문에 가장 위에 있는 정수는 -1로 출력
+        if lst:
+            print(lst[-1])
+        else:
+            print(-1)
+    elif nums[0] == 'size':  //길이는 len
+        print(len(lst))
+    elif nums[0] == 'empty': //lst가 비어있지 않으면 0출력 비어있다면 1출력 
+        if lst:
+            print(0)
+        else:
+            print(1)
+
+'''
+1.while True:로 무한 루프를 돌며 입력을 처리
+
+2. 각 입력에 대해 원래 문자열과 비교
+      5가지 조건 push , pop , top ,size, empty
+      
+3. 입력이 0일 때는 종료하도록 처리합니다.
+
+4.비교 결과가 같으면 'yes', 아니면 'no'를 출력합니다.
+  '''
+
+
+  
