@@ -1,0 +1,27 @@
+lst = []  // 저장 할 빈리스트 
+
+while(True):  // 
+    n = input()
+    if n == "0": // 0이 주어지면 종료 
+        break
+    if n == n[::-1]:  // 입력된 n의 값이 역순으로 바꾼 n과 문자열이 같다면 YES 출력
+        lst.append('yes')
+    else:             //같지 않다면 NO출력 
+        lst.append('no')
+
+for result in lst:
+    print(result)
+
+
+
+'''
+
+1.while True:로 무한 루프를 돌며 입력을 처리
+
+2. 입력이 0일때 종료 
+
+2.각 입력에 대해 숫자를 문자열로 바꾸고, 그 문자열을 뒤집은 후, 원래 문자열과 비교합니다.
+
+3. 맞으면 yes출력 아니면 no 출력 
+
+'''
