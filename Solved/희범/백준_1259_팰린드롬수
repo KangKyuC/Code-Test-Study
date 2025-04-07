@@ -1,0 +1,22 @@
+a = "" # 입력 대기용 변수
+
+result = []
+
+def palindrome(num):
+    for i in range(len(num)): # 입력값이 끝날 때까지
+        if num[i] == num[-i-1]: # 첫 자리 코드와 마지막 자리 코드 비교
+            continue # iteration 계속
+        else:
+            result.append("no")
+            break # 맞지 않은 경우 break
+    else: # for 구문에서 break가 없었을 경우
+        result.append("yes")
+    
+while True:
+    a = input()
+    if a == "0": # a의 입력이 0이면 멈춤
+        break
+    palindrome(a) # 함수 시행
+    
+for i in result:
+    print(i) # result 결과값 출력
