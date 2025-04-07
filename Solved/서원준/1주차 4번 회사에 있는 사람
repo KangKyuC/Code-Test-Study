@@ -1,0 +1,60 @@
+
+
+시간초과 케이스      ----> remove와 sort 방식은 비효율적 ,  list=[] 를 사용하는것은 순서가 있기때문에 이렇게 자료들 속에서 정보를 찾는경우에는 set()함수를 사용해서 하는것이 더 효율적 --> 이때는 append가 아닌 add()를 사용 해야함! 
+                                +++ remove를 사용하는것보다 fitter 함수와 리스트컴프리헨션을 사용해서 조건에 맞는 항목만 골라내는것도 더 좋은 방법
+/////////////////////// 
+N = int(input())
+
+people= []
+for _ in range(N):
+    peoples = input().split()
+
+    name, action = peoples[0], peoples[1]
+
+    if action == 'enter':
+        people.append(name)
+
+    elif action == 'leave':
+            people.remove(name)
+
+result = sorted(people, reverse= 'True')
+
+for i in result:
+    print(i)
+    ///////////////////////////
+
+
+////느리지만 정상적으로 채점완료 
+N = int(input())
+
+people= set()
+for _ in range(N):
+    peoples = input().split()
+
+    name, action = peoples[0], peoples[1]  // peoples의 값을 name과 action으로 나눔
+
+    if action == 'enter':
+        people.add(name)
+
+    elif action == 'leave':
+            people.remove(name)
+
+result = sorted(people, reverse= 'True')      // 왜 뒤집어야 하지?  
+
+for i in result:
+    print(i)
+
+
+//
+
+1. 읽어야 할 출입 기록 수 n을 입력받는다.
+2. 빈 집합 `people`를 생성한다. (현재 회사에 있는 사람들을 추적)
+3. 로그 n개에 대해 다음 작업을 반복한다:
+    a. 각 로그를 읽어 이름과 동작을 분리한다. ("name" 과 "action")
+    b. "enter"인 경우 해당 사람을 `people`에 추가한다.
+    c. "leave"인 경우 해당 사람을 `people`에서 제거한다.
+4. `people`에 남아있는 사람들을 사전 순의 역순으로 정렬한다.
+5. 정렬된 사람들의 이름을 한 줄에 하나씩 출력한다.
+
+
+
