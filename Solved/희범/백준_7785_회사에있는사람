@@ -1,0 +1,21 @@
+commute_set = set()
+
+num_input = int(input()) # 시행 횟수 입력
+
+result = []
+
+def check_status(name,status):
+    if status == "enter": # 입력에 "enter"가 있으면 set에 name을 추가하고
+        commute_dic.add(name)
+    elif status == "leave": # 입력에 "leave"가 있으면 set에 name을 제거
+        commute_dic.remove(name)
+
+for _ in range(num_input): # name, status 입력하기 위한 for 문
+    name, status = [str for str in input().split()]
+    check_status(name, status)
+
+result = list(commute_set) # set인 commute_dic을 result에서 리스트화 
+result.sort(reverse=True) # 알파벳 역순으로 재정렬
+
+for enter in result:
+    print(enter)
