@@ -1,4 +1,5 @@
 
+
 나는 코딩 키즈반 수준이기때문에 지금 당장 문제를 풀 수 없다.
 그래서 문제 풀기 전, 문제와 관련된 개념 정리 먼저하고 가려고 한다..!
 
@@ -60,6 +61,46 @@ print("스플릿은 문장 뒤에" .split())
 print("스플릿은 문장 뒤에" .split())
 
 이제 박대리는 퇴근해도 됨.
+
+
+for _ in range(5):
+ print("박대리 퇴근해".split())
+
+
+편-안.
+
+
+
+
+   4. sorted([]) 
+   리스트[]의 내용들을 줄 세우는 법. 근데 그러면 print기능이랑 뭐가 다르지..? 
+   sorted([])는 청소도우미, 옷가게 알바생 같음. 어지러진 물품들을 본인만의 기준으로 정렬해줌.근데 그게 >>오름차순<<
+   
+   근데 거꾸로 정렬하고싶을 때도 있으니까 리스트 바로 옆에 ,reverse=True 라는 단어를 넣어주기. 
+   sorted(["banana", "apple", "cherry"], reverse=True)   >>내림차순<<
+
+
+
+   근데 sorted([])는 왜 print(sorted([]))를 안써도 출력되지....? -> 인터프리터 환경이라 그렇다.
+   항시 print 를 잊지말자. 리스트 변수지정도 잊지말자...
+
+
+   names = ["김대리", "이대리", "박대리"]
+   print(sorted(names))
+
+   거꾸로 렛츠고
+   names = ["김대리", "이대리", "박대리"]
+   sorted(names, reverse=True)
+   print(sorted(names))
+
+>>>에러남.
+   @ 정답 코드
+     names = ["김대리", "이대리", "박대리"]
+     reversed_names = sorted(names, reverse=True)
+     print(reversed_names)
+
+->거꾸로 바꾼 값을 변수로 또 지정해줘야함..>! 파이썬은 자꾸 감싸는걸 좋아하는 듯. 폴더안의 폴더안의 폴더안의 폴더 느낌.
+
 
 
 
