@@ -93,13 +93,20 @@ for _ in range(5):
    sorted(names, reverse=True)
    print(sorted(names))
 
->>>에러남.
-   @ 정답 코드
+>>> 에러남.
+   
+    @ 정답 코드
      names = ["김대리", "이대리", "박대리"]
      reversed_names = sorted(names, reverse=True)
      print(reversed_names)
 
-->거꾸로 바꾼 값을 변수로 또 지정해줘야함..>! 파이썬은 자꾸 감싸는걸 좋아하는 듯. 폴더안의 폴더안의 폴더안의 폴더 느낌.
+->거꾸로 바꾼 값을 변수로 또 지정해줘야함..>! 파이썬은 자꾸 감싸는걸 좋아하는 듯. 
+  폴더안의 폴더안의 폴더안의 폴더 느낌.
+
+
+공부하다보니sorted()는 리스트[]외에도 모든 값을 받는다고 함..!
+그리고 변수 없으면 좀 불편한게 꼭 print(sorted((어쩌구저쩌구))를 다 넣어야 한다.
+그래서 변수를 넣는게 효율에 좋다.
 
 
 
