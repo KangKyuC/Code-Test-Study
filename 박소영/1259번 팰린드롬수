@@ -1,0 +1,10 @@
+
+
+while True:                   # 트루라면 계속 반복해라.
+    num = input()             # num이라는변수에 문자열을 넣을건데
+    if num == "0":            # 만약 num에 "0" 입력하면: 
+        break                 # 멈춰야해.
+    if num == num[::-1]:      # 만약 num이 팰린드롬이면:
+        print("yes")          # yes 출력
+    else:                     # 그게 아니라면
+        print("no")           # no 출력
