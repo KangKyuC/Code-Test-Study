@@ -5,7 +5,7 @@ class Stack:
     def __init__(self):
         self.items = []
     
-    # 맨 위에 데이터 E를 추가
+    # 맨 위에 데이터를 추가
     def push(self, item):
         self.items.append(item)
     
