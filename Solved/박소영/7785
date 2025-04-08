@@ -1,0 +1,14 @@
+n = int(input())
+office = set()
+
+for _ in range(n):
+    name, record = input().split()
+    if record == "enter":
+        office.add(name)
+    else:
+        office.remove(name)
+
+result = sorted(office, reverse=True)
+
+for person in result:
+    print(person)
