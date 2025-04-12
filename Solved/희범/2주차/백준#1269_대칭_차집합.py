@@ -1,5 +1,5 @@
 """
-
+코딩 전 생각정리 :
 사용 변수
 set_size = int(input().split())
 a_set = set()
