@@ -1,3 +1,21 @@
+"""
+
+사용 변수
+set_size = int(input().split())
+a_set = set()
+b_set = set()
+
+답
+len(a_set - b_set) + len(b_set - a_set)
+
+예제 입력
+3 5 # A, B의 원소 개수
+1 2 4 # A의 원소
+2 3 4 5 6 # B의 원소
+
+input 제한
+a_set = [set(a) in a for int(input().split())[:len(set_size[0]+1)]]
+"""
 # https://www.acmicpc.net/status?user_id=dachou16&problem_id=1269&from_mine=1
 # 메모리: 88232 KB, 시간: 256 ms
 
