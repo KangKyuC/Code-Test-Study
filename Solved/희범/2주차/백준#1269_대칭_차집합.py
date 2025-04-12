@@ -13,6 +13,9 @@ len(a_set - b_set) + len(b_set - a_set)
 1 2 4 # A의 원소
 2 3 4 5 6 # B의 원소
 
+예제 출력
+4
+
 input 제한
 a_set = [set(a) in a for int(input().split())[:len(set_size[0]+1)]]
 """
