@@ -1,0 +1,23 @@
+n = int(input())
+
+lst = []
+
+for i in range(n):
+    lst = [list(map(int, input().split())) for _ in range(n)]   # 리스트 컴프리헨션을 활용해서 한번 적어봄 
+
+for i in range(len(lst)):
+    a = lst[i][0] % 10 # 어차피 12와 2의 제곱값의 뒷자리는 같음
+    b = lst[i][1]   # 2차원 리스트의 형태로 꺼내올수 있음
+
+    if a == 0:  # 0은 10번째 컴퓨터 
+        print(10)
+    elif a == 1 or a == 5 or a == 6:  # 1,5,6은 a%10의 값이 반복 
+        print(a % 10)
+    elif a == 4 or a == 9:   #4와 9는 홀수 인덱스와 짝수인덱스의 값이 반복됨 
+        if b % 2 == 0:
+            print((a ** 2) % 10)
+        else:
+            print(a % 10)
+    elif a == 2 or a == 3 or a == 7 or a == 8:   
+        print((a ** b) % 10)
+
