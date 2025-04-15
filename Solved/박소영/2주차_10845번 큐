@@ -1,0 +1,23 @@
+import sys
+from collections import deque
+input = sys.stdin.readline
+
+egg_count = int(input())
+egg_queue = deque()
+
+for egg in range(egg_count):
+    command = input().strip()
+
+    if command.startswith("push"):
+        _, value = command.split()
+        egg_queue.append(int(value))
+    elif command == "pop":
+        print(egg_queue.popleft() if egg_queue else -1)
+    elif command == "size":
+        print(len(egg_queue))
+    elif command == "empty":
+        print(0 if egg_queue else 1)
+    elif command == "front":
+        print(egg_queue[0] if egg_queue else -1)
+    elif command == "back":
+        print(egg_queue[-1] if egg_queue else -1)
