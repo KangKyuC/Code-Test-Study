@@ -1,0 +1,38 @@
+'''
+선물_목록 ← 빈 리스트 (내림차순 유지)
+
+n번 반복:
+    입력: a와 선물들
+
+    if a == 0:
+        if 선물_목록 비어있음:
+            출력 -1
+        else:
+            출력 선물_목록[0]
+            선물_목록에서 첫 번째 요소 삭제
+    else:
+        for 선물 in 입력된 선물들:
+            적절한 위치에 삽입해서 리스트 내림차순 유지
+
+먼저 슈도코드를 통해서 리스트를 활용해서 문제를 푸는 방법을 생각을 해봤지만 매 삽입마다 정렬비용이 크다보니 최대힙을 사용해서 값을 꺼내주면 되겠다는 생각을 했습니다.
+'''
+
+
+import heapq   # 가장큰 값을 먼저 꺼내 주기때문에 최대 힙을 사용 (-값을 사용)
+
+gift_heap = []
+n = int(input())
+
+for i in range(n):
+    gift = list(map(int,input().split()))
+    if gift[0] == 0:  #아이를 만났다.
+        if len(gift_heap)  == 0:
+            print(-1)
+        else:
+            tmp = -heapq.heappop(gift_heap)
+            print(tmp)
+    else:
+        for j in range(gift[0]):
+            heapq.heappush(gift_heap, -gift[j+1])  #최대값 gift에 삽입   (이부분에서 뇌정지)
+
+
