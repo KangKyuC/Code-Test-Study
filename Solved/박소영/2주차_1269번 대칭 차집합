@@ -1,0 +1,9 @@
+
+a_len, b_len = map(int, input().split())
+
+A = set(map(int, input().split()))
+B = set(map(int, input().split()))
+
+chajiphop = A ^ B
+
+print(len(chajiphop))
