@@ -1,4 +1,5 @@
 import sys
+input = sys.stdin.readline
 
 class Queue:
     def __init__(self):
@@ -11,7 +12,7 @@ class Queue:
         if self.empty() == 1:
             return -1
         result = self.Queue[0]
-        self.Queue = self.Queue[1:] # 시간 초과
+        self.Queue = self.Queue[1:]
         return result
 
     def size(self):
@@ -38,7 +39,7 @@ N = int(input())
 queue = Queue()
 
 for _ in range(N):
-    cmd = input().split()
+    cmd = input().strip().split()
     if cmd[0] == 'push':
         value = int(cmd[1])
         queue.push(value)
