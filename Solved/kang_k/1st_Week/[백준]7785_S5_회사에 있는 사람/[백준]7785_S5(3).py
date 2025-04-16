@@ -1,6 +1,7 @@
 # 시간 164 ms
 # 반복적인 순회 및 비교를 통한 정렬 유지 vs sort 거의 비슷할 것으로 보임.
 # 출력 부분에서 print 대신 sys.stdout.write 를 활용해보려 함.
+# 보다 효율성을 높일 수 있는 방향이나 방법은 없을까?
 
 import sys
 input = sys.stdin.readline
