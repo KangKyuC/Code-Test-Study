@@ -62,5 +62,24 @@
         <a href="https://www.acmicpc.net/problem/11729">백준#11729: 하노이 탑 이동 순서</a>
       </td>
     </tr>
+      <td rowspan="3">3주차<br>(04.10~04.16)</td>
+      <td>Medium</td>
+      <td><a href="https://www.acmicpc.net/problem/1935">백준#1935: 후위 표기식2</a></td>
+      <td><a href="https://www.acmicpc.net/problem/2075">백준#2075: N번째 큰 수</a></td>
+      <td><a href="https://www.acmicpc.net/problem/31869">백준#31869: 선배님 밥 사주세요!</a></td>
+      <td><a href="https://www.acmicpc.net/problem/14426">백준#14426: 접두사 찾기</a></td>
+    </tr>
+    <tr>
+      <td>Hard</td>
+      <td><a href="https://www.acmicpc.net/problem/17298">백준#17298: 오큰수</a></td>
+      <td><a href="https://www.acmicpc.net/problem/1715">백준#1715: 카드 정렬하기</a></td>
+      <td><a href="https://www.acmicpc.net/problem/5430">백준#5430: AC </a></td>
+      <td><a href="https://www.acmicpc.net/problem/1068">백준#1068: 트리</a></td>
+    </tr>
+    <tr>
+      <td>Challenge</td>
+      <td colspan="4" align="center">
+        <a href="https://www.acmicpc.net/problem/6581">백준#6581: HTML</a>
+      </td>
   </tbody>
 </table>
