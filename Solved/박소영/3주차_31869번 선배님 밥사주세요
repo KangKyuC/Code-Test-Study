@@ -1,0 +1,42 @@
+n = int(input())  
+
+bapyak = {}
+
+for _ in range(n):
+    name, w, d, p = input().split()
+    bapyak[name] = (int(w), int(d), int(p))
+
+meok_day = []  
+
+sozigeum = {}
+for _ in range(n) :
+    name, m = input().split()
+    sozigeum[name] = int(m)
+
+meok_day = []
+
+for name in bapyak:
+    ju, yoil, cost = bapyak[name]
+    if sozigeum[name] >= cost :
+        day = ju * 7 + yoil
+        meok_day.append(day)
+
+
+
+meok_day.sort()
+
+max_yeonsok = 0
+now_yeonsok = 0
+
+for i in range(len(meok_day)) :
+    if i == 0:
+        now_yeonsok = 1
+    elif meok_day[i] == meok_day[i - 1] + 1:
+        now_yeonsok += 1
+    else:
+        now_yeonsok = 1
+
+
+max_yeonsok = max(max_yeonsok, now_yeonsok)
+
+print(max_yeonsok)
