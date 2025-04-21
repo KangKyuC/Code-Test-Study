@@ -1,0 +1,31 @@
+1. N값 입력 받기
+2. 후위 표기식 입력
+3.N값 만큼 피연산자 입력을 리스트 형태로 받기 
+4. 빈 스택을 하나 만들고 
+5. if로 알파벳이 입력되는 경우 피연산자의 리스트의 인덱스값을 스택에 저장 , 연산자를 만나면 스택에서 피연산자 2개를 꺼내서 조건에 따라서 계산 
+
+
+
+n = int(input())  #N값 입력
+words = input()  #후위 표기식 입력
+nums = [int(input()) for _ in range(n)] # N값 만큼 피연산자 입력
+
+lst = []
+
+for i in words:
+    if 'A' <= i <= 'Z' :		# 후위표기식에서 알파벳을 만나면 lst에 저장(물론 알파벳 형태가 아닌 피연산자값의 형태로)
+        lst.append(nums[ord(i)-65])
+    else:  # 연산자를 만나면
+        b = lst.pop()
+        a = lst.pop()
+
+        if i == '+':
+            lst.append(a + b)
+        elif i == '-':
+            lst.append(a - b)
+        elif i == '*':
+            lst.append(a * b)
+        elif i == '/':
+            lst.append(a / b)
+
+print('%.2f' % lst[0])
