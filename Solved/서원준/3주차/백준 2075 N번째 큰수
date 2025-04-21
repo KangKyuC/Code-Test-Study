@@ -1,0 +1,21 @@
+1. N입력
+2.N**2을 구현해야함  이를 리스트 형태의 for문으로 구현
+3. N번째 큰수를 찾야한다. 
+4.최소 힙을 사용해서 N만큼의 길이를 유지하고 거기서 최소값을 빼낸다.
+
+
+
+import heapq
+
+N = int(input())
+heap = []
+
+for i in range(N):
+    nums = list(map(int, input().split()))
+    for number in nums:
+        if len(heap) < N:  # heap의 크기를 n개로 유지
+            heapq.heappush(heap, number)
+        elif heap[0] < number:   #number의 크기가 [0]보다 작으면 number로 대체하기 
+            heapq.heappop(heap)
+            heapq.heappush(heap, number)
+print(heap[0])
