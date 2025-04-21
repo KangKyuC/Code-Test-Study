@@ -102,5 +102,34 @@ input으로 입력받는걸 깜빡...!
 
 
 
+★★★이번에 알게 된 개념★★★
+
+
+1. 변수 언패킹
+
+   한꺼번에 변수 입력 가능!! buy, 꼭 변수 갯수만큼만 입력받을 수 있다.
+   name, w, d, p = input().split()
+
+==> input().split()은 무조건 짝꿍이다. 변수 여러개 입력할 때 절대 절대 빠뜨리지말기.
+
+
+
+2. meok_day = []
+  아래 코드처럼 변수를 빈 리스트로 둬도 돼?
+  빈 변수는 어디에 쓸건데 미리 지정해?
+=============================
+meok_day = []
+
+for name in bapyak:
+    ju, yoil, cost = bapyak[name]
+    if sozigeum[name] >= cost:
+        day = ju * 7 + yoil
+        meok_day.append(day)
+
+meok_day.sort()
+==============================
+
+==> 변수는 빈 값으로 시작 삽가능!! 나중에 .append(), .update()같은 걸로 채워나가는게 일반적임.
+
 
 
