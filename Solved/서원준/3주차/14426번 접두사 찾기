@@ -3,13 +3,13 @@
 
 N, M = map(int, input().split())
 
-s_set = [input().strip() for _ in range(N)]
+s_list = [input().strip() for _ in range(N)]
 test = [input().strip() for _ in range(M)]
 
 count = 0
 
 for a in test:
-    for s in s_set:
+    for s in s_list:
         if s.startswith(a):     # M개의 쿼리마다 N개의 문자열을 순회하면서 startswith를 사용하고 있어  O(N × M)의 시간복잡도 
             count += 1
             break
