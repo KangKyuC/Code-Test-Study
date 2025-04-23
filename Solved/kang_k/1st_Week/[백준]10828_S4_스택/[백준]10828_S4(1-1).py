@@ -31,10 +31,7 @@ def activate_method(stack, input_var):
         stack.empty()
     elif method == "top":
         stack.top()
-    else:
-        print("There is no Method that you input")
 
-if __name__ == '__main__':
-    stack = Stack()
-    for _ in range(int(input())):
-        activate_method(stack, input())
+stack = Stack()
+for _ in range(int(input())):
+    activate_method(stack, input())
