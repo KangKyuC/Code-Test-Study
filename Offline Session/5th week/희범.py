@@ -56,18 +56,58 @@ N은 2, 4, 8, 16, 32, 64, 128 중 하나이다.
 7
 
 풀이 과정
-input_num = int(input())
-input_str = [input() for _ in range(input_num)]
+시작
 
-pre_num = ""
-pre_mat = ""
+1. 입력 받기
+   N ← 정수 입력  // 행렬의 크기
+   matrix ← 빈 2차원 배열 크기 N×N
+   for i from 0 to N-1:
+     한 줄을 공백 기준으로 분할하여 matrix[i]에 저장
 
-# 행열구조 input_str[x][y]
+2. 균일 검사 함수 정의
+   함수 isUniform(x, y, size) → Boolean:
+     기준값 ← matrix[x][y]
+     for i from x to x+size-1:
+       for j from y to y+size-1:
+         if matrix[i][j] ≠ 기준값:
+           return False
+     return True
 
-1. input_str[0][0] 
-2. input_str[1][0] x+1
-3. input_str[0][1] y+1
-4. input_str[1][1] x+1, y+1
+3. 쿼드트리 분할 함수 정의
+   프로시저 quadtree(x, y, size, resultList):
+     if isUniform(x, y, size) then
+       // 모두 같은 값이면 하나의 블록으로 취급
+       resultList에 (x, y, size, matrix[x][y]) 추가
+     else
+       // 섞여 있으면 4등분하여 재귀 호출
+       half ← size / 2
+       // 1사분면 (왼쪽 위)
+       quadtree(x,       y,       half, resultList)
+       // 2사분면 (오른쪽 위)
+       quadtree(x,       y+half,  half, resultList)
+       // 3사분면 (왼쪽 아래)
+       quadtree(x+half,  y,       half, resultList)
+       // 4사분면 (오른쪽 아래)
+       quadtree(x+half,  y+half,  half, resultList)
+
+4. 쿼드트리 실행 및 색상 개수 세기
+   resultList ← 빈 리스트
+   quadtree(0, 0, N, resultList)
+
+   whiteCount ← 0  // 0인 블록 개수
+   blueCount  ← 0  // 1인 블록 개수
+
+   for each (x, y, size, value) in resultList:
+     if value = "0" then
+       whiteCount ← whiteCount + 1
+     else
+       blueCount ← blueCount + 1
+
+5. 결과 출력
+   출력 whiteCount
+   출력 blueCount
+
+끝
 
 """
 
