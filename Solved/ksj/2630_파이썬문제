@@ -7,8 +7,8 @@ result = []
 
 def solution(x,y,N) :
     color = paper[x][y] #색종이 색
-    for i in range(x, x+n):
-        for j in range(y, y+n):
+    for i in range(x, x+N):
+        for j in range(y, y+N):
             if color != paper[i][j]:
                 solution(x, y, N//2)
                 solution(x, y+N//2, N//2)
@@ -19,7 +19,7 @@ def solution(x,y,N) :
     else :
         result.append(1)
         
-solution(0,0,n)
+solution(0,0,N)
 print(result.count(0))
 print(result.count(1))
 
