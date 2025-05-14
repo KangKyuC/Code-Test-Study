@@ -91,24 +91,24 @@ def is_uniform(x, y, size):
 
 def quadtree(x, y, size, result):
     # x,y: 현재 블록의 왼쪽 위 좌표
-    # size: 블록 한 변의 길이 (2^k 형태)
-    # result: quadtree 정보를 누적할 리스트
+    # size: 블록 한 변의 길이
+    # result: 쿼드 트리 결과
 
-    # 1) 블록이 균질하다면
+    # 1) 같은 숫자가 모이면
     if is_uniform(x, y, size):
         result.append((x, y, size, matrix[x][y]))  
         # (x, y, size, 값) 형태로 저장
     else:
-        # 2) 섞여 있으면 4분할
+        # 2) 숫자가 섞여 있으면 4분할
         half = size // 2
         # 1 사분면
-        quadtree(x,       y,       half, result)
+        quadtree(x, y, half, result)
         # 2 사분면
-        quadtree(x,       y+half,  half, result)
+        quadtree(x+half, y, half, result)
         # 3 사분면
-        quadtree(x+half,  y,       half, result)
+        quadtree(x, y+half, half, result)
         # 4 사분면
-        quadtree(x+half,  y+half,  half, result)
+        quadtree(x+half, y+half, half, result)
 
 result = []
 
@@ -118,9 +118,9 @@ white = 0
 blue = 0
 
 for i in result:
-    if i[3] == "0":
+    if i[3] == "0": # 0이면
         white += 1
-    else:
+    else: # 1이면
         blue += 1
 
 print(white, blue, sep="\n")
