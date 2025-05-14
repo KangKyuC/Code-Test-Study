@@ -6,7 +6,7 @@ paper = [list(map(int, sys.stdin.readilne().split())) for _ in range(N)]
 result = []
 
 def solution(x,y,N) :
-    color = paper[x][y]
+    color = paper[x][y] #색종이 색
     for i in range(x, x+n):
         for j in range(y, y+n):
             if color != paper[i][j]:
@@ -24,3 +24,9 @@ print(result.count(0))
 print(result.count(1))
 
 ##runtime error 발생.
+#색종이의 가로 세로를 N//2 영역으로 만들어서, blue색종이 영역 갯수와 white색종이 영역의 갯수를 구하는 문제.
+# 규칙 
+1. (N/2) * (N/2) 색종이로 나눈다
+2. 안나뉠때까지 자르는걸 반복한다. 
+3. 첫 색상이 나머지 색상과 같은지 보고 틀리면 틀린 구역을 네 구역으로 나눠서 다시 색상이 같은걸 확인해준다. 
+4. 재귀로 ㄱㄱㄱ
